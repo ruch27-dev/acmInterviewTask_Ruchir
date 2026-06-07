@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | RE:HACK</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        acm: {
+                            bg: '#0a0a0a',
+                            card: '#141414',
+                            blue: '#2563eb',
+                            cyan: '#06b6d4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg { background: radial-gradient(circle at 50% 0%, #1e3a8a 0%, #0a0a0a 50%); }
+    </style>
+</head>
+<body class="bg-acm-bg text-gray-200 font-sans antialiased min-h-screen flex flex-col selection:bg-acm-cyan selection:text-white">
+
+    <nav class="w-full border-b border-gray-800 bg-acm-bg/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-tight">
+                <span class="text-acm-cyan">ACM</span> <span class="text-white">MPSTME</span>
+            </a>
+            <a href="index.html" class="text-sm font-mono text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Abort & Return
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-2xl w-full space-y-8 bg-acm-card border border-gray-800 p-8 md:p-10 rounded-2xl shadow-2xl relative overflow-hidden">
+            
+            <div class="text-center">
+                <h2 class="mt-2 text-3xl font-bold text-white tracking-tight">Team Registration</h2>
+                <p class="mt-2 text-sm text-gray-400 font-mono">Initialize your squad for RE:HACK</p>
+            </div>
+
+            <form class="mt-8 space-y-6" onsubmit="event.preventDefault(); alert('Registration submitted successfully! (This is a frontend demo)'); window.location.href='index.html';">
+                
+                <div class="space-y-4 border-b border-gray-800 pb-6">
+                    <h3 class="text-lg font-medium text-white">General Information</h3>
+                    
+                    <div>
+                        <label for="team-name" class="block text-sm font-medium text-gray-400">Team Name *</label>
+                        <input id="team-name" name="team-name" type="text" required class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                    </div>
+
+                    <div>
+                        <label for="college" class="block text-sm font-medium text-gray-400">College / University *</label>
+                        <input id="college" name="college" type="text" required class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                    </div>
+                </div>
+
+                <div class="space-y-4 border-b border-gray-800 pb-6">
+                    <h3 class="text-lg font-medium text-white">Team Leader (Member 1)</h3>
+                    
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div>
+                            <label for="leader-name" class="block text-sm font-medium text-gray-400">Full Name *</label>
+                            <input id="leader-name" name="leader-name" type="text" required class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                        </div>
+                        <div>
+                            <label for="leader-email" class="block text-sm font-medium text-gray-400">Email Address *</label>
+                            <input id="leader-email" name="leader-email" type="email" required class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="leader-phone" class="block text-sm font-medium text-gray-400">Phone Number *</label>
+                        <input id="leader-phone" name="leader-phone" type="tel" required class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-medium text-white">Team Roster</h3>
+                        <div>
+                            <label for="team-size" class="sr-only">Team Size</label>
+                            <select id="team-size" name="team-size" class="bg-[#080808] border border-gray-700 text-white text-sm rounded-lg focus:ring-acm-cyan focus:border-acm-cyan block p-2">
+                                <option value="2">2 Members</option>
+                                <option value="3">3 Members</option>
+                                <option value="4">4 Members</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="member-2" class="block text-sm font-medium text-gray-400">Member 2 Name *</label>
+                        <input id="member-2" name="member-2" type="text" required class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                    </div>
+
+                    <div id="member-3-container" class="hidden">
+                        <label for="member-3" class="block text-sm font-medium text-gray-400">Member 3 Name *</label>
+                        <input id="member-3" name="member-3" type="text" class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                    </div>
+
+                    <div id="member-4-container" class="hidden">
+                        <label for="member-4" class="block text-sm font-medium text-gray-400">Member 4 Name *</label>
+                        <input id="member-4" name="member-4" type="text" class="mt-1 block w-full bg-[#080808] border border-gray-700 rounded-lg py-2.5 px-4 text-white focus:ring-acm-cyan focus:border-acm-cyan sm:text-sm transition-colors">
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full flex justify-center py-3.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-acm-blue hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-acm-bg focus:ring-acm-blue transition-all duration-300">
+                        Execute Registration
+                    </button>
+                    <p class="mt-3 text-center text-xs text-gray-600 font-mono">By registering, you agree to the rules of engagement.</p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const teamSizeSelect = document.getElementById('team-size');
+        const member3Container = document.getElementById('member-3-container');
+        const member4Container = document.getElementById('member-4-container');
+        const member3Input = document.getElementById('member-3');
+        const member4Input = document.getElementById('member-4');
+
+        teamSizeSelect.addEventListener('change', function() {
+            const size = parseInt(this.value);
+
+            if (size >= 3) {
+                member3Container.classList.remove('hidden');
+                member3Input.required = true;
+            } else {
+                member3Container.classList.add('hidden');
+                member3Input.required = false;
+                member3Input.value = '';
+            }
+
+            if (size === 4) {
+                member4Container.classList.remove('hidden');
+                member4Input.required = true;
+            } else {
+                member4Container.classList.add('hidden');
+                member4Input.required = false;
+                member4Input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
